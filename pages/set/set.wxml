@@ -1,0 +1,19 @@
+<canvas
+  style="width: 400px; height: 480px;border:2px solid #ddd"
+  canvas-id="myCanvas"
+  binderror="canvasIdErrorCallback"
+  bindtouchstart="touchstart"
+  bindtouchmove="touchmove"
+  bindtouchend="touchend"
+>
+</canvas>
+
+<view hidden="{{hidden}}">
+  ({{x}}, {{y}})
+</view>
+
+<view>
+  <button bindtap='autodraw'>自动画图</button>
+  <button bindtap='stopdraw'>停止画图</button>
+  <button bindtap='clearall'>清除所有</button>
+</view>
