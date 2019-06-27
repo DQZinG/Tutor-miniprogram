@@ -1,25 +1,23 @@
-<!--index.wxml-->
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}"
- style='height:{{H}}'>
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-img" mode="widthFix" bindload='imgH'/>
-    </swiper-item>
-  </block>
-</swiper>
+<view class="slider-wrapper">
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}"
+	 style='height:{{H}}'>
+		<block wx:for="{{imgUrls}}">
+			<swiper-item>
+				<image src="{{item}}" class="slide-img" mode="widthFix" bindload='imgH' />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
 
-<view class="section">
-  <view class="section__title"></view>
-  <picker
-    mode="multiSelector"
-    bindchange="bindMultiPickerChange"
-    bindcolumnchange="bindMultiPickerColumnChange"
-    value="{{multiIndex}}"
-    range="{{multiArray}}"
-    class="mymulpicker"
-  >
-    <view class="picker">
-    {{multiArray[0][multiIndex[0]]}} - {{multiArray[1][multiIndex[1]]}}
-    </view>
-  </picker>
+
+<view wx:for="{{clients}}" class="dan" style="background-color:{{item.color}};" bindtap="toDetails" data-item="{{item}}">
+	<!-- <navigator class="dan" style="background-color:{{item.color}};" hover-class="none" url="../details/details?object={{item}}"> -->
+		<view class="info-wrapper">
+			<view class="subject">{{item.grade}}-{{item.subject}}</view>
+			<view class="wage">{{item.wage}}/时</view>
+			<view class="teacher-sex">{{item.teacherSex}}</view>
+		</view>
+		<view class="details">{{item.details}}</view>
+		<view class="address">{{item.address}}</view>
+	<!-- </navigator> -->
 </view>

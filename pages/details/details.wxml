@@ -1,0 +1,34 @@
+<view class="wrapper">
+	<view class="Info">
+		<view class="client-Info">
+			<view>年级：{{grade}}</view>
+			<view>学科：{{subject}}</view>
+			<view>性别：{{studentSex}}</view>
+			<view>描述：{{description}}</view>
+		</view>
+		<view class="teacher-Info">
+			<view>时薪：{{wages}}</view>
+			<view>要求：{{teacherSex}}</view>
+			<view>这里写点东西{{requirement}}</view>
+		</view>
+
+	</view>
+
+	<view class="schedule">
+		<view>次数：{{times}}</view>
+		<view>时间：
+			<span id="Mon">周一 </span> 
+			<span id="Tus">周二 </span>
+			<span id="Wen">周三 </span>
+			<span id="Thu">周四 </span> 
+			<span id="Fri">周五 </span>
+			<span id="Sat">周六 </span>
+			<span id="Sun">周日</span>
+		</view>
+	</view>
+
+	<view class="address">
+		<view>地址：{{address}}</view>
+		<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" polyline="{{polyline}}" show-location style="width: 100%; height: 500rpx;"></map>
+	</view>
+</view>

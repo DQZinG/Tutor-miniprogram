@@ -1,0 +1,71 @@
+.wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	background-color: orange;
+}
+
+.Info {
+	width: 100%;
+	display: flex;
+}
+	
+.client-Info, .teacher-Info{
+	padding:0 2rpx;
+	width: 50%;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+}
+
+
+.client-Info  view{
+	line-height: 75rpx;
+	width: 100%;
+	border-top: 5rpx solid #888888;
+	border-right: 5rpx solid #888888;
+}
+
+.teacher-Info  view{
+	line-height: 75rpx;
+	width: 100%;
+	border-top: 5rpx solid #888888;
+}
+
+.client-Info :last-child{
+	/* font-size: 35rpx; */
+	height: 100%;
+	border-bottom: 5rpx solid #888888;
+}
+.teacher-Info :last-child{
+	border-top: none;
+	height: 100%;
+	border-bottom: 5rpx solid #888888;
+}
+
+
+.schedule {
+	width: 100%;
+}
+
+.schedule view {
+	line-height: 75rpx;
+	border-bottom: 5rpx solid #888888;
+}
+
+.schedule span {
+	color: #AAAAAA;
+}
+
+.schedule #Sat, .schedule #Fri {
+	color: #000000;
+}
+
+.address {
+	width: 100%;
+}
+
+.address view {
+	line-height: 75rpx;
+	height: 75rpx;
+}

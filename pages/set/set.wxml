@@ -1,19 +1,12 @@
-<canvas
-  style="width: 400px; height: 480px;border:2px solid #ddd"
-  canvas-id="myCanvas"
-  binderror="canvasIdErrorCallback"
-  bindtouchstart="touchstart"
-  bindtouchmove="touchmove"
-  bindtouchend="touchend"
->
-</canvas>
-
-<view hidden="{{hidden}}">
-  ({{x}}, {{y}})
+<view class="userinfo">
+	<view class="userAvatar">
+		<open-data type="userAvatarUrl" mode="cover"></open-data>
+	</view>
+	<view class="userName">
+		<open-data type="userNickName" lang="zh_CN"></open-data>
+	</view>
 </view>
 
-<view>
-  <button bindtap='autodraw'>自动画图</button>
-  <button bindtap='stopdraw'>停止画图</button>
-  <button bindtap='clearall'>清除所有</button>
+<view class="mylist">
+	我的课单
 </view>

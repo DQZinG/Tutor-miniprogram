@@ -1,23 +1,41 @@
-//index.js
-//获取应用实例
-const app = getApp()
+var app = getApp();
 
 Page({
   data: {
     imgUrls: [
-      'https://www2.autoimg.cn/newsdfs/g2/M05/18/5C/744x0_1_autohomecar__ChcCRFx-IBOAdWoMABrVLNMPU9s084.jpg',
-      'https://www2.autoimg.cn/cardfs/product/g26/M04/25/C9/744x0_1_autohomecar__ChsEnFx9i3WAOi5AAAfhJ6rkg6k345.jpg',
-      'https://www3.autoimg.cn/newsdfs/g3/M07/33/07/744x0_1_autohomecar__ChcCRVx-Y1eASirPAE5Chq-l9Qg561.jpg'
+			'http://www.chinese315.org/edit/uploadfile/201511/2015-11-18-17-55-11.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=724143410,3441183531&fm=26&gp=0.jpg',
+      'https://img.zcool.cn/community/018b5b55d890fe6ac7251df865c947.JPG@1280w_1l_2o_100sh.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
     circular:true,
     interval: 5000,
-    H:"",
-    multiArray: [['本田', '丰田','大众'], ['飞度', '雅阁', '思域', 'CR-V', '凌派']],
-    multiIndex: [0, 0],
-    region: ['广东省', '深圳市', '南山区'],
-    customItem: '全部',
+    H: "",
+
+		clients:[
+			{
+			grade:"小五",
+			subject:"数学",
+			wage:"80",
+			studentSex:"女",
+			teacherSex:"女",
+			details:"成绩中上，帮助突破难题",
+			address:"南山京基百纳",
+			color:"pink"
+			},
+			{
+			grade:"初一",
+			subject:"英语",
+			wage:"90",
+			studentSex:"男",
+			teacherSex:"男",
+			details:"自学能力差，基础薄弱，希望能教系统性的学习方法，",
+			address:"中信红树湾",
+			color:"deepskyblue"
+			
+			}
+		],
   },
 
   imgH: function (e) {
@@ -28,33 +46,22 @@ Page({
       H: winH　//设置高度
     })
   },
+	
+	onLoad:function(){
+		wx.request({
+			url:"http://localhost",
+			data:{
+				title:""
+			}
+		})
+	},
 
-  bindMultiPickerChange(e) {
-    this.setData({
-      multiIndex: e.detail.value
+  toDetails:function(event){
+		var item =event.currentTarget.dataset.item;
+    let jsonStr=JSON.stringify(item);
+		wx.navigateTo({
+      url: '/pages/details/details?jsonStr=' + jsonStr,
     })
-  },
-  bindMultiPickerColumnChange(e) {
-    const data = {
-      multiArray: this.data.multiArray,
-      multiIndex: this.data.multiIndex
-    }
-    data.multiIndex[e.detail.column] = e.detail.value
-    
-    switch(data.multiIndex[0]) {
-    case 0:
-    data.multiArray[1] = ['飞度', '雅阁', '思域', 'CR-V', '凌派']
-    break
-    case 1:
-    data.multiArray[1] = ['卡罗拉', '凯美瑞', '威驰', 'RAV4', '锐志']
-    break
-    case 2:
-    data.multiArray[1] = ['高尔夫', '帕萨特', '朗逸', '途观', '凌度', 'CC']
-    break
-    case 3:
-    data.multiArray[1] = ['高尔夫', '帕萨特', '朗逸', '途观', '凌度', 'CC']
-    break    
-  }
-this.setData(data)
+		
   }
 })

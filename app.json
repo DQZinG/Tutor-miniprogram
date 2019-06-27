@@ -1,32 +1,32 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/post/post",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/details/details"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "XJB写点",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "主页",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "Home",
-      "iconPath": "icon/home.png",
-      "selectedIconPath": "icon/home1.png"
-    },{
-      "pagePath": "pages/post/post",
-      "text": "Post",
-      "iconPath": "icon/page.png",
-      "selectedIconPath": "icon/page1.png"      
-    },{
-      "pagePath": "pages/set/set",
-      "text": "Set",
-      "iconPath": "icon/set.png",
-      "selectedIconPath": "icon/set1.png"
-    }]
-  }
+    "selectedColor": "#112380",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home1.png"
+      },
+      {
+        "pagePath": "pages/set/set",
+        "text": "Set",
+        "iconPath": "icon/set.png",
+        "selectedIconPath": "icon/set1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
